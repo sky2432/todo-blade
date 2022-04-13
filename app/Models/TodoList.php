@@ -18,6 +18,6 @@ class TodoList extends Model
 
     public function scopeIncomplete(Builder $query)
     {
-        return $query->where('is_done', false);
+        return $query->where('is_completed', false);
     }
 }

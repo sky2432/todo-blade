@@ -27,7 +27,7 @@ class TodoListFactory extends Factory
 
         return [
             'name' => Arr::random($todo_lists),
-            'is_done' => $this->faker->boolean(),
+            'is_completed' => $this->faker->boolean(),
         ];
     }
 }

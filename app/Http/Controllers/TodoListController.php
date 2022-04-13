@@ -93,7 +93,7 @@ class TodoListController extends Controller
     public function complete($id)
     {
         $todo = TodoList::find($id);
-        $todo->update(['is_done' => true]);
+        $todo->update(['is_completed' => true]);
 
         return redirect()->route('todo.index');
     }
