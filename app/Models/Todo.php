@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TodoList extends Model
+class Todo extends Model
 {
     use HasFactory;
+
+    protected $table = 'todo_list';
 
     protected $guarded = [
         'id',

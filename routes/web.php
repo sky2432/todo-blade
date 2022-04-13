@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\TodoListController;
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::put('todo/{todo}/complete', [TodoListController::class, 'complete'])->name('todo.complete');
-Route::resource('todo', TodoListController::class);
+Route::put('todo/{todo}/complete', [TodoController::class, 'complete'])->name('todo.complete');
+Route::resource('todo', TodoController::class);

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TodoRequest;
-use App\Models\TodoList;
-use Illuminate\Http\Request;
+use App\Models\Todo;
 
-class TodoListController extends Controller
+class TodoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,21 +14,11 @@ class TodoListController extends Controller
      */
     public function index()
     {
-        $todo_lists = TodoList::Incomplete()->get();
+        $todo_lists = Todo::Incomplete()->get();
 
         return view('top', [
             'todo_lists' => $todo_lists
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -40,33 +29,11 @@ class TodoListController extends Controller
      */
     public function store(TodoRequest $request)
     {
-        TodoList::create([
+        Todo::create([
             'name' => $request->name
         ]);
 
         return redirect()->route('todo.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -78,7 +45,7 @@ class TodoListController extends Controller
      */
     public function update(TodoRequest $request, $id)
     {
-        $todo = TodoList::find($id);
+        $todo = Todo::find($id);
         $todo->update(['name' => $request->name]);
 
         return redirect()->route('todo.index');
@@ -92,7 +59,7 @@ class TodoListController extends Controller
      */
     public function complete($id)
     {
-        $todo = TodoList::find($id);
+        $todo = Todo::find($id);
         $todo->update(['is_completed' => true]);
 
         return redirect()->route('todo.index');
@@ -106,7 +73,7 @@ class TodoListController extends Controller
      */
     public function destroy($id)
     {
-        TodoList::destroy($id);
+        Todo::destroy($id);
 
         return redirect()->route('todo.index');
     }
