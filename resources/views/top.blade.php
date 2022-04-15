@@ -28,7 +28,7 @@
     <div class="container">
         <h1>TodoList</h1>
         <table>
-            @foreach ($todo_lists as $todo)
+            @foreach ($todos as $todo)
                 <tr>
                     <td>
                         <form id="nameForm{{ $todo->id }}"

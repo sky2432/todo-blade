@@ -17,7 +17,7 @@ class TodoFactory extends Factory
      */
     public function definition()
     {
-        $todo_lists = [
+        $todos = [
             '勉強',
             '買い物',
             '掃除',
@@ -26,7 +26,7 @@ class TodoFactory extends Factory
         ];
 
         return [
-            'name' => Arr::random($todo_lists),
+            'name' => Arr::random($todos),
             'is_completed' => $this->faker->boolean(),
         ];
     }
