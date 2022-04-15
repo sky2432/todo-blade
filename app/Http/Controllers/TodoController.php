@@ -14,10 +14,10 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todo_lists = Todo::Incomplete()->get();
+        $todos = Todo::Incomplete()->get();
 
         return view('top', [
-            'todo_lists' => $todo_lists
+            'todos' => $todos
         ]);
     }
 

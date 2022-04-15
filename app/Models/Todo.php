@@ -10,8 +10,6 @@ class Todo extends Model
 {
     use HasFactory;
 
-    protected $table = 'todo_list';
-
     protected $guarded = [
         'id',
         'created_at',
