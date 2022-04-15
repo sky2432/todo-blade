@@ -14,7 +14,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = Todo::Incomplete()->get();
+        $todos = Todo::Incomplete()->latest()->get();
 
         return view('top', [
             'todos' => $todos
