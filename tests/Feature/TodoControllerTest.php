@@ -116,6 +116,11 @@ class TodoControllerTest extends TestCase
         ]);
     }
 
+    /**
+     * Test completing todo.
+     *
+     * @return void
+     */
     public function test_complete()
     {
         $todo = Todo::factory()->create([
@@ -132,6 +137,11 @@ class TodoControllerTest extends TestCase
         ]);
     }
 
+    /**
+     * Test deleting todo.
+     *
+     * @return void
+     */
     public function test_delete()
     {
         $todo = Todo::factory()->create();
